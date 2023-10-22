@@ -1,0 +1,74 @@
+0.  How many different colors does each format support?
+    BMPs supports a varying number of colors, depending how many bits are used to represent each pixel, ranging from 1 bit
+        per pixel (2 colors, eg black and white) up to 32 bits, or 2^32 ~ 4 billion colors.
+    GIF supports 256 colors per pixel, as 8bits are used per pixel.
+    JPGS use 24 bits per pixel, 8 for each red, green, and blue, for a total of ~16 million colors.
+    PNG also use 24 bits per pixel.
+
+1.  Which of the formats supports animation?
+    GIF supports animation.
+
+2.  What’s the difference between lossy and lossless compression?
+    Lossless compression makes the file smaller without any loos of quality of the image by writing the contents of the file
+        in a more efficient way. Lossy compression on the other hand reduces the quality of the image when it compresses it.
+
+3.  Which of these formats is lossy-compressed?
+    JPGs are lossy compressed.
+
+4.  What happens, technically speaking, when a file is deleted on a FAT file system?
+    When a file is deleted on a FAT file system, the file is not deleted. Only the first character is changed to denote that
+    the file has been "deleted" and then all of the files clusters are moved to the file systems list of free clusters.
+
+5.  What can someone like you do to ensure (with high probability) that files you delete cannot be recovered?
+    There are lots of sanitization software available that can be used to sanitize a hard disk to the point where it would
+    be very unlikely that someone could easily recover any data off of the drive if I were to sell it. However, the best way
+    would be to physically destroy the drive as suggested in the article, which could be easily done in a few minutes.
+
+6.  What’s stdint.h?
+    It provides some additional integer data types of varying sizes.
+
+7.  What’s the point of using uint8_t, uint32_t, int32_t, and uint16_t in a program?
+    Using these integer data types saves space when you know the size of the number that you are trying to store e.g. 8 bit integers
+    as well as be more clear in your code that you are storing small numbers, or positive numbers, as opposed to characters or
+    something else.
+
+8.  How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively? (Assume a 32-bit architecture like the CS50 Appliance.)
+    A BYTE is 1 byte, a WORD is 2 bytes, a DWORD is 4 bytes, and a LONG is 4 bytes.
+
+9.  What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be? (Leading bytes used to identify file
+    formats (with high probability) are generally called "magic numbers.)"
+    A BMP always starts with BM (in ASCII) or 0x42 0x4D in hex.
+
+10. What’s the difference between bfSize and biSize?
+    biSize is the size of the info header for the BMP. bfSize is the size of the whole file: the size of the image data itself plus the
+    two header files.
+
+11. What does it mean if biHeight is negative?
+    When biHeight is positive, the image is specified bottom up, and if biHeight is negative the image is specified top down.
+
+12. What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits per pixel)?
+    biClrUsed specifies the colors used by the file.
+
+13. Why might fopen return NULL in copy.c:37?
+    There might be an instance where the file cannot be created to write to, for example if the memory ran out. In this case we want to
+    check for NULL.
+
+14. Why is the third argument to fread always 1 in our code?
+    The third arguement specifies the number of elements to read, and in copy we want to read in one pixel at a time.
+
+15. What value does copy.c:70 assign padding if bi.biWidth is 3?
+    3 bytes of padding.
+
+16. What does fseek do?
+    fseek allows us to reposition the position indicator, or "cursor" of the input stream to a new position.
+
+17. What is SEEK_CUR?
+    When using fseek we need to tell it where to reposition the position indicator. We do this by specifying an origin, or reference location
+    and then tell fseek how far to move from this place. SEEK_CUR uses the current position of the position indicator as the reference point.
+    In copy.c, we read all of the image data as specified by the width of the image, and then when we are on the last column of the image we
+    use fseek, defining the origin as the current position indicator location (the last column of image data) and then move the cursor relative
+    to this position by exactly the same amount as the width of the padding to skip over the padding.
+
+18. Whodunit?
+    I'm pretty sure it's Rob holding a cat, but I am not sure enough for a conviction. I tried playing around to try to get the image more clear
+    but found that what I have now seems to be pretty decent.

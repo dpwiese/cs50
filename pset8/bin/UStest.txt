@@ -1,0 +1,8 @@
+US	02138	Cambridge	Massachusetts	MA	Middlesex	017			42.377	-71.1256	
+US	02139	Cambridge	Massachusetts	MA	Middlesex	017			42.3647	-71.1042	
+US	02140	Cambridge	Massachusetts	MA	Middlesex	017			42.3932	-71.1338	
+US	02141	Cambridge	Massachusetts	MA	Middlesex	017			42.3687	-71.0836	
+US	02142	Cambridge	Massachusetts	MA	Middlesex	017			42.362	-71.083	
+US	02143	Somerville	Massachusetts	MA	Middlesex	017			42.3829	-71.1028	
+US	02144	Somerville	Massachusetts	MA	Middlesex	017			42.4003	-71.1221	
+US	02145	Somerville	Massachusetts	MA	Middlesex	017			42.3907	-71.0929	
